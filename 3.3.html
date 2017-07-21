@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3.3</title>
+	<link href="styles/assert.css" rel="stylesheet" type="text/css"></link>
+	<script src="scripts/assert.js"></script>
+</head>
+<body>
+	<script>
+		function ninja(){
+		  return this;
+		}
+
+		assert(ninja() === window, '作为函数调用时，this 代指 window');
+
+		var o = {};
+		o.say = function(){ 
+		   return this;
+		};
+		
+		assert(o.say() === o, '作为方法调用时，this 代指 o');
+	</script>
+</body>
+</html>
