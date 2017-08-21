@@ -10,3 +10,10 @@ function assert(value, desc) {
   li.appendChild(document.createTextNode(desc));
   resultsList.appendChild(li);
 }
+
+function clear(argument) {
+  var resultsList = document.getElementById('results');
+  if(resultsList) {
+    results.innerHTML="";
+  }
+}
