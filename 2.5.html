@@ -12,6 +12,8 @@
 				li.className = value ? 'pass' : 'fail';
 				li.appendChild(document.createTextNode(desc));
 				results.appendChild(li);
+
+				// 如果断言为假，则将该断言所属的测试组样式为 fail，测试组的默认样式为 pass
 				if(!value){
 					li.parentNode.parentNode.className = 'fail';
 				}
@@ -20,7 +22,11 @@
 
 			this.test = function test(name, fn) {
 				results = document.getElementById('results');
+
+				// 注意这里，这里重新将赋值为 #results>li>ul
 				results = assert(true, name).appendChild(document.createElement('ul'));
+
+				// 执行整个测试组，向 #results>li>ul 追加 n 个 li
 				fn();
 			}
 		})();
